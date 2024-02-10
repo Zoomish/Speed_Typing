@@ -42,7 +42,6 @@ body {
 }
 .content-box .typing-text {
     overflow: hidden;
-    max-height: 254px;
 }
 .typing-text::-webkit-scrollbar {
     width: 0;
