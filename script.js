@@ -48,7 +48,7 @@ function loadParagraph() {
 function initTyping() {
     let characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
-    if (charIndex < characters.length - 1 && timeLeft > 0) {
+    if (charIndex < characters.length && timeLeft > 0) {
         if (!isTyping) {
             timer = setInterval(initTimer, 1000);
             isTyping = true;
