@@ -23,6 +23,7 @@ async function loadParagraph() {
         paragraph=result.body
     } catch (error) {
         console.error(error);
+        loadParagraph()
     }
     typingText.innerHTML = "";
     paragraph.split("").forEach(char => {
