@@ -12,19 +12,11 @@ let timeLeft = maxTime;
 let charIndex = mistakes = isTyping = 0;
 
 async function loadParagraph() {
-    const url = `https://jsonplaceholder.typicode.com/posts/${Math.floor(Math.random() * 100) + 1}`;
-    const options = {
-        method: 'GET'
-    };
-
-    try {
-        const response = await fetch(url, options);
-        const result = await response.json();
-        paragraph=result.body
-    } catch (error) {
-        console.error(error);
-        loadParagraph()
-    }
+    paragraph = await fetch("https://fish-text.ru/get?format=json&number=3") //1
+        .then((response) => response.json()) //2
+        .then((paragraph) => {
+            return paragraph.text; //3
+        });
     typingText.innerHTML = "";
     paragraph.split("").forEach(char => {
         let span = `<span>${char}</span>`
